@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Битва за Москву</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <p class="eyebrow">Исторический проект</p>
+    <h1>Битва за Москву</h1>
+    <p class="subtitle">
+      Интерактивная карта-таймлайн: выбери дату и посмотри, как менялась обстановка
+      на московском направлении в 1941 году.
+    </p>
+  </header>
+
+  <main class="layout">
+    <section class="map-column">
+      <div class="map-toolbar">
+        <div>
+          <p class="toolbar-label">Текущая карта</p>
+          <h2 id="mapTitle">Загрузка...</h2>
+        </div>
+
+        <div class="toolbar-actions">
+          <button id="toggleUnits" class="secondary-button" type="button">Скрыть военные части</button>
+          <button id="prevStep" class="secondary-button" type="button">← Назад</button>
+          <button id="nextStep" type="button">Вперёд →</button>
+        </div>
+      </div>
+
+      <figure class="map-frame" id="mapFrame">
+        <img id="battleMapImage" src="/static/maps/01_october_13_18.jpg" alt="Карта этапа Битвы за Москву" />
+        <div id="unitsLayer" class="units-layer"></div>
+      </figure>
+
+      <section class="timeline-panel">
+        <div class="timeline-header">
+          <div>
+            <h2>Таймлайн</h2>
+            <p>Нажми на дату, чтобы переключить карту и описание.</p>
+          </div>
+        </div>
+
+        <div id="timeline" class="timeline"></div>
+      </section>
+    </section>
+
+    <aside class="sidebar">
+      <section class="card stage-card">
+        <p id="stageDate" class="date-label"></p>
+        <h2 id="stageTitle">Загрузка...</h2>
+        <p id="stageDescription" class="description"></p>
+      </section>
+
+      <section class="card">
+        <h3>Как пользоваться</h3>
+        <p class="description">
+          Выбирай этап на таймлайне. Карта слева будет меняться в соответствии с датой.
+          Кнопка «Скрыть военные части» включает и выключает точки частей поверх карты.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Военные части на этапе</h3>
+        <div id="unitsList" class="units-list"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
